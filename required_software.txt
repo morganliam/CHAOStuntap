@@ -1,0 +1,43 @@
+Requirements for the current code to run:
+
+First we update the packages on the board, with internet from ethernet preferably:
+
+apt-get update
+apt-get upgrade
+
+ffmpeg needs to be compiled for arm, the linaro distro used by ADI does not have a pre-built ffmpeg library to use.
+
+ffmpeg static build can be found here:
+https://johnvansickle.com/ffmpeg/
+
+The PicoZed SDR uses an ARM cortex-a9 which is a 32 bit ARM processor. We use the armhf build of ffmpeg for this.
+
+This should link the current armhf static build:
+https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-armhf-static.tar.xz
+
+It is possible to get the latest build through command line:
+wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-armhf-static.tar.xz
+
+We need to unpack the tar:
+
+tar xvf ffmpeg-git-armhf-static.tar.xz
+
+This provides the binary but we can add it to the path to make it easier to use:
+I installed it to /usr/local/bin but there are other locations it could go in $PATH.
+
+It is needed to sudo mv the ffmpeg and ffprobe file /usr/local/binary
+
+An example of this is:
+sudo mv ffmpeg-git-20180203-amd64-static/ffmpeg ffmpeg-git-20180203-amd64-static/ffprobe /usr/local/bin/
+
+However the numbers will be different based on the current github build.
+
+You can check the ffmpeg and ffprobe files are located in /usr/local/bin with:
+
+whereis ffmpeg
+whereis ffprobe
+
+run:
+ffmpeg
+
+to view current version and check installation.
