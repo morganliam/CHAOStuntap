@@ -1,5 +1,7 @@
 # CHAOStuntap
 
+Required software in: **required_soft.txt**
+
 How to run current tun/tap code:
 
 Follow howto.txt for information on running this code.
