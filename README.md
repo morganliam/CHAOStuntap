@@ -31,3 +31,11 @@ This code contains code that setups required values in tmp files that will be us
 
 **restart_modem_gui.sh:**
 Sets some needed values in tmp files, like stream ip and modem ip. This is the file that actively runs the modemd compiled code to run the tun/tap. 
+
+Some links about ffmpeg and tun/tap tunnels:
+How to stream with ffmpeg:
+http://4youngpadawans.com/stream-camera-video-and-audio-with-ffmpeg/
+How tun/tap streams work:
+https://programmersought.com/article/38706541350/
+
+
