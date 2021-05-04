@@ -1,10 +1,5 @@
 Requirements for the current code to run:
 
-First we update the packages on the board, with internet from ethernet preferably:
-
-apt-get update
-apt-get upgrade
-
 ffmpeg needs to be compiled for arm, the linaro distro used by ADI does not have a pre-built ffmpeg library to use.
 
 ffmpeg static build can be found here:
@@ -41,3 +36,7 @@ run:
 ffmpeg
 
 to view current version and check installation.
+
+v4l2 needs to be installed as the video driver(Video4Linux):
+apt-get install v4l-utils
+sion and check installation.

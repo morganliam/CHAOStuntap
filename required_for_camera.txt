@@ -25,3 +25,14 @@ can be broken into multiple segments:
 udp://192.168.0.177:5000?pkt_size=1316: Used to determine the type of stream, UDP or TCP, as well as where to stream it to. Packet size is determined as well.
 
 There is currently no options for interface to send over.
+
+Receiving can be done over VLC with instructions found here:
+
+https://www.howtogeek.com/118075/how-to-stream-videos-and-music-over-the-network-using-vlc/
+
+The stream settings needed in VLC are: 
+
+network URL:
+udp:\\@0.0.0.0:5000
+Destination Stream: Check the display locally option
+Uncheck activate transcoding
