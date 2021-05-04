@@ -1,0 +1,15 @@
+How to run:
+
+run in this directory:
+
+make
+make install
+
+./rfsom-box-gui-start.sh
+./restart_modem_gui.sh
+
+to run webcam stream:
+
+./stream.sh
+
+values in stream.sh need to be changed to be able accomodate ip addresses
