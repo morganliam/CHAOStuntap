@@ -5,6 +5,13 @@ run in this directory:
 make
 make install
 
+make install: This will install the compiled executables into the correct executable path of:
+
+/usr/local/bin
+
+
+make clean: This can be used to clean out linked .o files out of folder.
+
 ./rfsom-box-gui-start.sh
 ./restart_modem_gui.sh
 
