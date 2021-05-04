@@ -1,0 +1,27 @@
+Camera will be created under:
+
+/dev/video*
+If it is the only video device it will likely show up under /dev/video0
+
+Webcam needs a female usb-a to micro-usb otg cable. This can connect to the OTG port of the board. The board attempts to initiate OTG connection
+but does not detect an OTG byte and ignores OTG and moves to normal udev rules.
+
+The webcam will use v4l2 to run as a webcam stream. FFMPEG will be used to run the video codec and streaming over ethernet as well.
+
+The command: 
+
+ffmpeg -f v4l2 -i /dev/video0 -preset ultrafast -tune zerolatency-vcodec libx264 -r 10 -b:v 512k -s 640x360 -f mpegts -flush_packets 0 udp://192.168.0.177:5000?pkt_size=1316
+
+can be broken into multiple segments:
+
+-f v4l2 -i /dev/video0 : These options use the v4l2 driver for linux with the input of /dev/video0
+
+-preset ultrafast -tune zerolatency: Uses the preset ultrafast zerolatency option for streaming
+
+-vcodec libx264 -r 10 -b:v 512k -s 640x360: Video options for the codec, which is libx264. This is used for mp4 options. These can be looked up.
+
+-f mpegts: This option will use the MPEG transport system. This is used for livestreaming over UDP multicast or HTTP.
+
+udp://192.168.0.177:5000?pkt_size=1316: Used to determine the type of stream, UDP or TCP, as well as where to stream it to. Packet size is determined as well.
+
+There is currently no options for interface to send over.
